@@ -932,7 +932,7 @@ func (c *Compactor) compact(fast bool, tsmFiles []string) ([]string, error) {
 		return nil, nil
 	}
 
-	tsm, err := NewTSMKeyIterator(size, fast, intC, trs...)
+	tsm, err := NewTSMBatchKeyIterator(size, fast, intC, trs...)
 	if err != nil {
 		return nil, err
 	}
