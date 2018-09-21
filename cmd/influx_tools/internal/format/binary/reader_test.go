@@ -18,9 +18,7 @@ func TestReader_OneBucketOneIntegerSeries(t *testing.T) {
 	ts := []int64{0, 1, 2}
 	ints := []int64{10, 11, 12}
 	vs := make([]interface{}, len(ints))
-	for i, v := range ints {
-		vs[i] = v
-	}
+	copy(vs, ints)
 	s := &oneSeriesData{
 		db:          "database",
 		rp:          "default",
@@ -51,9 +49,7 @@ func TestReader_OneBucketOneFloatSeries(t *testing.T) {
 	ts := []int64{0, 1, 2}
 	floats := []float64{0.1, 11.1, 1200.0}
 	vs := make([]interface{}, len(floats))
-	for i, v := range floats {
-		vs[i] = v
-	}
+	copy(vs, floats)
 	s := &oneSeriesData{
 		db:          "database",
 		rp:          "default",
@@ -84,9 +80,7 @@ func TestReader_OneBucketOneUnsignedSeries(t *testing.T) {
 	ts := []int64{0, 1, 2}
 	uints := []uint64{0, 1, math.MaxUint64}
 	vs := make([]interface{}, len(uints))
-	for i, v := range uints {
-		vs[i] = v
-	}
+	copy(vs, uints)
 	s := &oneSeriesData{
 		db:          "database",
 		rp:          "default",
@@ -117,9 +111,7 @@ func TestReader_OneBucketOneBooleanSeries(t *testing.T) {
 	ts := []int64{0, 1, 2}
 	bools := []bool{true, true, false}
 	vs := make([]interface{}, len(bools))
-	for i, v := range bools {
-		vs[i] = v
-	}
+	copy(vs, bools)
 	s := &oneSeriesData{
 		db:          "database",
 		rp:          "default",
@@ -150,9 +142,7 @@ func TestReader_OneBucketOneStringSeries(t *testing.T) {
 	ts := []int64{0, 1, 2}
 	strings := []string{"", "a", "a《 》"}
 	vs := make([]interface{}, len(strings))
-	for i, v := range strings {
-		vs[i] = v
-	}
+	copy(vs, strings)
 	s := &oneSeriesData{
 		db:          "database",
 		rp:          "default",
