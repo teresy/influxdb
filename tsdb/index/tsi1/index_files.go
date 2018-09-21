@@ -41,9 +41,7 @@ func (p IndexFiles) Release() {
 // Files returns p as a list of File objects.
 func (p IndexFiles) Files() []File {
 	other := make([]File, len(p))
-	for i, f := range p {
-		other[i] = f
-	}
+	copy(other, p)
 	return other
 }
 
